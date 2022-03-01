@@ -1,22 +1,22 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.112.1/build/three.module.js';
 import {GUI} from 'https://cdn.jsdelivr.net/npm/three@0.112.1/examples/jsm/libs/dat.gui.module.js';
-import {controls} from './controls.js';
-import {game} from './game.js';
-import {terrain} from './terrain.js';
-import {textures} from './textures.js';
+import * as controls from './controls.js';
+import {Game} from './game.js';
+import * as terrain from './terrain.js';
+import {TextureAtlas} from './textures.js';
 
 
 let _APP = null;
 
 
 
-class ProceduralTerrain_Demo extends game.Game {
+class ProceduralTerrain_Demo extends Game {
   constructor() {
     super();
   }
 
   _OnInitialize() {
-    this._textures = new textures.TextureAtlas(this);
+    this._textures = new TextureAtlas(this);
     this._textures.onLoad = () => {};
     this._CreateGUI();
 

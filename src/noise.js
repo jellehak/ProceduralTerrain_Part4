@@ -4,9 +4,8 @@ import perlin from './perlin-noise.js';
 
 import {math} from './math.js';
 
-export const noise = (function() {
 
-  class _NoiseGenerator {
+  export class Noise {
     constructor(params) {
       this._params = params;
       this._Init();
@@ -40,8 +39,3 @@ export const noise = (function() {
           total, this._params.exponentiation) * this._params.height;
     }
   }
-
-  return {
-    Noise: _NoiseGenerator
-  }
-})();
