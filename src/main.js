@@ -1,8 +1,8 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.112.1/build/three.module.js';
 import {GUI} from 'https://cdn.jsdelivr.net/npm/three@0.112.1/examples/jsm/libs/dat.gui.module.js';
-import * as controls from './controls.js';
+import {OrbitControls} from './controls.js';
 import {Game} from './game.js';
-import * as terrain from './terrain.js';
+import {TerrainChunkManager} from './terrain.js';
 import {TextureAtlas} from './textures.js';
 
 
@@ -24,14 +24,14 @@ class ProceduralTerrain_Demo extends Game {
     this._userCamera.position.set(4100, 0, 0);
     this._graphics.Camera.position.set(7000, 7000, 7000);
 
-    this._entities['_terrain'] = new terrain.TerrainChunkManager({
+    this._entities['_terrain'] = new TerrainChunkManager({
       camera: this._userCamera,
       scene: this._graphics.Scene,
       gui: this._gui,
       guiParams: this._guiParams,
     });
 
-    this._entities['_controls'] = new controls.OrbitControls({
+    this._entities['_controls'] = new OrbitControls({
       camera: this._graphics.Camera,
       scene: this._graphics.Scene,
       domElement: this._graphics._threejs.domElement,
