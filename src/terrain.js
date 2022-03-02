@@ -333,6 +333,7 @@ export class TerrainChunkManager {
       biomeGenerator: this._biomes,
       colourGenerator: new HyposemetricTints({ biomeGenerator: this._biomes }),
       heightGenerators: [
+        // new FixedHeightGenerator()
         new HeightGenerator(this._noise, offset, 100000, 100000 + 1),
       ],
     };
