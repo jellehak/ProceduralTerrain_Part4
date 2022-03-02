@@ -52,8 +52,11 @@ export class Graphics {
       false
     );
 
+    const width = window.innerWidth
+    const height = window.innerHeight;
+
     const fov = 60;
-    const aspect = 1920 / 1080;
+    const aspect = width / height;
     const near = 1;
     const far = 100000.0;
     this._camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
